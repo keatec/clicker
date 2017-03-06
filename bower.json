@@ -1,0 +1,20 @@
+{
+  "name": "clicker",
+  "homepage": "https://github.com/keatec/clicker",
+  "description": "SingleClickHandlerSolutions",
+  "main": "js/clicker.js",
+  "keywords": [
+    "singlepage"
+  ],
+  "authors": [
+    "Keatec GmbH"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
