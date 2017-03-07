@@ -67,17 +67,6 @@ SOFTWARE.
                 if (res !== undefined) {
                     context.data('contextres',JSON.stringify(res));
                     context.attr('data-contextres',JSON.stringify(res));
-                    var state = JSON.stringify(res);
-                    if (state != oldState) {
-                        // Hey, Content needs to be reloaded;  
-                        // look for an genereator;
-                        window.setTimeout(function () {
-                            var generator = context.data('contextGenerator')
-                            if (generator != undefined) {
-                                // Execute Generator for this Element!  
-                            };
-                        });
-                    };
                 }
             });
         }
