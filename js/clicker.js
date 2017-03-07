@@ -56,7 +56,7 @@ SOFTWARE.
                 // Context will be the first context (looking UP)
                 context = context.first();
                 // Load the State Item, and RESET to {} if not present
-                var state = context.data('contextRes'); 
+                var state = context.data('contextres'); 
                 var oldState = state;
                 if (state === undefined) {
                     state = {};
@@ -65,8 +65,8 @@ SOFTWARE.
                 }
                 var res = exports[app]['action_'+action](element,context,state);
                 if (res !== undefined) {
-                    context.data('contextRes',JSON.stringify(res));
-                    context.attr('data-contextRes',JSON.stringify(res));
+                    context.data('contextres',JSON.stringify(res));
+                    context.attr('data-contextres',JSON.stringify(res));
                     var state = JSON.stringify(res);
                     if (state != oldState) {
                         // Hey, Content needs to be reloaded;  

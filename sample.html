@@ -20,31 +20,35 @@
 </head>
 
 <body>
-    <div class="container context">
-        <div class="context clicktest" data-app="myClickTest">
+    <div class="container">
+        <div class="context" data-app="myApp">
+             <button class="action" data-action="clickapp">Action for GlobalContext</button>
+             <ul>
+                <li class="context">
+                     <button class="action" data-action="clickitem">Action for ITEM1</button>
+                </li>
+                <li class="context">
+                     <button class="action" data-action="clickitem">Action for ITEM2</button>
+                </li>
+                <li class="context">
+                     <button class="action" data-action="clickitem">Action for ITEM3</button>
+                </li>
+             </ul>
         </div>
     </div>
 
-    <div style="display:none" class="htmlGenerators">
-        <div class="context" data-generator="dashboard">
-            <div class="val_title">{title}</div>
-            <div class="val_lastchange">{lastchanged}</div>
-             <button class="action" data-action="clickme">Action</button>
-        </div>
-    </div>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/keatec/h5generator/master/js/h5generator.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/bluebird/3.4.7/bluebird.min.js"></script>
     <script src="js/clicker.js"></script>
     <script>
         // First Version
-        $(document).ready(function () {
-            $('.clicktest').append($(generators.dashboard({})));
-        });
-        var myClickTest = {
-            action_clickme: function (element,context, state) {
+        var myApp = {
+            action_clickitem: function (element,context, state) {
+                console.log(element,context,state);
+                return state;
+            },
+            action_clickapp: function (element,context, state) {
                 console.log(element,context,state);
                 return state;
             }
